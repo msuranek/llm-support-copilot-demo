@@ -2,6 +2,15 @@
 
 Ukázkový návrh AI copilot workflow pro zákaznickou podporu.
 
+## English Summary
+
+`llm-support-copilot-demo` outlines a practical AI copilot workflow for customer support teams.
+The repository focuses on retrieval, draft generation, guardrails, and human review rather than
+fully autonomous replies.
+
+It is designed as a demo-friendly concept repo that can support technical talks, architecture
+discussions, or future implementation prototypes.
+
 ## Cíl
 
 Ukázat, jak může LLM pomáhat support týmu bez toho, aby bezhlavě odpovídal zákazníkům. Repozitář
