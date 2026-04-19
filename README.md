@@ -1,48 +1,54 @@
 # llm-support-copilot-demo
 
-Ukázkový návrh AI copilot workflow pro zákaznickou podporu.
+A reference design for an AI-assisted customer support copilot workflow.
 
-## English Summary
+## Status
 
-`llm-support-copilot-demo` outlines a practical AI copilot workflow for customer support teams.
-The repository focuses on retrieval, draft generation, guardrails, and human review rather than
-fully autonomous replies.
+Conceptual architecture / docs-first repository.
 
-It is designed as a demo-friendly concept repo that can support technical talks, architecture
-discussions, or future implementation prototypes.
+This repository documents a support copilot approach centered on retrieval, draft generation,
+guardrails, and human review. It is intended as a design reference and starting point for future
+prototypes.
 
-## Cíl
+## Overview
 
-Ukázat, jak může LLM pomáhat support týmu bez toho, aby bezhlavě odpovídal zákazníkům. Repozitář
-je koncipovaný jako demo architektura a obsahový základ pro:
+The goal is to show how an LLM can support customer service operations without defaulting to fully
+autonomous customer-facing replies.
 
-- technický článek
-- demo prezentaci
-- GitHub showcase repo
+The design emphasizes:
 
-## Co repo demonstruje
+- retrieval over internal support knowledge
+- agent-facing answer drafting
+- guardrails for risky or uncertain outputs
+- escalation to a human operator
 
-- retrieval nad interní knowledge base
-- návrh odpovědi pro agenta
-- guardrails pro citlivé nebo nejisté situace
-- eskalaci na člověka
-
-## Obsah repozitáře
+## Repository Contents
 
 - `docs/architecture.md`:
-  přehled komponent a toku dat
+  high-level components and information flow
 - `docs/evaluation.md`:
-  jak hodnotit kvalitu draftů a kdy odpověď nepustit dál
+  evaluation notes, review criteria, and fallback cases
 
-## Typický workflow
+## Typical Workflow
 
-1. Přijde ticket nebo chat.
-2. Systém určí intent a získá relevantní kontext.
-3. LLM připraví draft odpovědi.
-4. Guardrails zkontrolují rizikové vzory.
-5. Agent odpověď schválí, upraví nebo eskaluje.
+1. A support ticket or chat message arrives.
+2. The system identifies intent and retrieves relevant context.
+3. The LLM prepares a draft answer for the agent.
+4. Guardrails inspect the draft for risky patterns or uncertainty.
+5. The agent approves, edits, or escalates the response.
 
-## Proč je to silné pro osobní brand
+## Non-Goals
 
-Téma support copilotů je dost praktické, srozumitelné i pro netechnické publikum a zároveň ukazuje,
-že AI nasazuješ s důrazem na workflow, ne jen na generování textu.
+- This repository is not a production-ready support product.
+- It does not include a runnable application or deployment setup.
+- It does not recommend replacing human agents in high-risk support scenarios.
+
+## References
+
+- [OpenAI Guides](https://platform.openai.com/docs/guides)
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+
+## License
+
+No license has been added yet. Add a project license before reusing this repository in other
+contexts.
