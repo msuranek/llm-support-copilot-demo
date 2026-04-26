@@ -2,9 +2,6 @@
 
 A reference design for an AI-assisted customer support copilot workflow.
 
-## Status
-
-Conceptual architecture / docs-first repository.
 
 This repository documents a support copilot approach centered on retrieval, draft generation,
 guardrails, and human review. It is intended as a design reference and starting point for future
