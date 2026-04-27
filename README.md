@@ -1,51 +1,31 @@
 # llm-support-copilot-demo
 
-A reference design for an AI-assisted customer support copilot workflow.
+Prototyp support copilotu postaveného na LLM — retrieval, guardrails a eskalace na člověka.
 
+## O projektu
 
-This repository documents a support copilot approach centered on retrieval, draft generation,
-guardrails, and human review. It is intended as a design reference and starting point for future
-prototypes.
+Tady jsem si ověřoval základní přístup: LLM nepíše odpovědi zákazníkům přímo, ale připravuje návrh pro agenta. Agent schválí, upraví nebo eskaluje. Výsledkem je rychlejší práce agenta bez rizika plně autonomních odpovědí.
 
-## Overview
+Projekt jsem postavil jako experiment, ze kterého jsem se hodně naučil — zejména co se týče fallbacků, logování a monitoring latence. Bez těhle věcí vypadá demo dobře, ale v produkci to vydrží krátce.
 
-The goal is to show how an LLM can support customer service operations without defaulting to fully
-autonomous customer-facing replies.
+## Architektura
 
-The design emphasizes:
+- `docs/architecture.md` — komponenty a datový tok
+- `docs/evaluation.md` — hodnoticí kritéria, fallback scénáře, edge cases
 
-- retrieval over internal support knowledge
-- agent-facing answer drafting
-- guardrails for risky or uncertain outputs
-- escalation to a human operator
+## Tok zpracování
 
-## Repository Contents
+1. Přijde support ticket nebo chat zpráva.
+2. Systém identifikuje záměr a načte relevantní kontext.
+3. LLM připraví návrh odpovědi pro agenta.
+4. Guardrails zkontrolují návrh na rizikové vzory nebo nejistotu.
+5. Agent schválí, upraví nebo eskaluje.
 
-- `docs/architecture.md`:
-  high-level components and information flow
-- `docs/evaluation.md`:
-  evaluation notes, review criteria, and fallback cases
+## Co to není
 
-## Typical Workflow
-
-1. A support ticket or chat message arrives.
-2. The system identifies intent and retrieves relevant context.
-3. The LLM prepares a draft answer for the agent.
-4. Guardrails inspect the draft for risky patterns or uncertainty.
-5. The agent approves, edits, or escalates the response.
-
-## Non-Goals
-
-- This repository is not a production-ready support product.
-- It does not include a runnable application or deployment setup.
-- It does not recommend replacing human agents in high-risk support scenarios.
-
-## References
-
-- [OpenAI Guides](https://platform.openai.com/docs/guides)
-- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+- Produkčně nasaditelná aplikace.
+- Doporučení nahradit lidi v high-stakes supportu.
 
 ## License
 
-No license has been added yet. Add a project license before reusing this repository in other
-contexts.
+MIT — viz LICENSE
